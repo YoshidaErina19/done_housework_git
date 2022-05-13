@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'housework.apps.HouseworkConfig'
-    'django_bootstrap5'
+    'housework.apps.HouseworkConfig',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
