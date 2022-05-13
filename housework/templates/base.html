@@ -25,8 +25,52 @@
      <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
     # font-family: 'M PLUS Rounded 1c', sans-serif;
 
+    <!-- My style -->
+    <link rel="stylesheet" type="text/css" helf="{% static'css/mystyle.css' %}">
+    {% block head %}{% endblock %}
 </head>
 <body>
+    <div id="wrapper">
+        <!--Navigation-->
+        <nav class="navbar-expand-lg navbar-dark navbar-customfixed-top">
+            <div class="container">
+                <a class="navbar-brand" herf="{% url 'housework:index' %}">Done Housework</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expandad="false" aria-label="Toggler-navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navibarResponsive">
+                    <ul class="navbar-nav mr-auto">
+                         <li class="nav-item {% block active_inquiry %}{% endblock %}">
+                             <a class="nav-link" herf="#">Inquiry</a>
+                         </li>
+                     </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" helf="#">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block header %}{% endblock %}
+
+        {% block contents %}{% endblock %}
+
+        <!-- Footer -->
+        <fotter classs="py-5 bg-block">
+            <div class="container">
+                <p class="m-0 text-center text-white small">Copyright &copy; Done Housework 2022</p>
+            </div>
+            <!-- /.container -->
+        </fotter>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{% static 'js/bootstrap.min.css' %}"></script>
+    </div>
 
 </body>
 </html>
