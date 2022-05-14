@@ -1,3 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}家事したよ!|Done　Housework{% endblock %}
+
+{% block header %}
+
+<header class="masthead text-center">
+    <div class="masthead-content">
+        <div class="container">
+            <h1 class="masthead-headning mb-0">Done Housework</h1>
+            <h2 class="masthead-subheading mb-0">"家事したよ!"を気軽に共有しよう</h2>
+            <a herf="#" class="btn btn-primary btn-xl rounded-pillmt-5">Log In</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock %}
+
+{% block contents %}
+<section>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5">
+                    <img class="img-fluid rounded-circle" src="{% static 'assets/img/01.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Done!</h2>
+                    <p>家事したことを手軽に共有</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+<!--
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,3 +50,4 @@
     <h1>Hello World</h1>
 </body>
 </html>
+-->
