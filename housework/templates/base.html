@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="ja">
-{% load django_bootstrap5 %}  {% comment %}不要かも{% endcomment %}
+{% load django_bootstrap5 %}  <!-- 不要かも -->
 
 <head>
-    {% bootstrap_css %}  {% comment %}不要かも{% endcomment %}
-    {% bootstrap_javascript %}  {% comment %}不要かも{% endcomment %}
+    {% bootstrap_css %}  <!-- 不要かも -->
+    {% bootstrap_javascript %}  <!-- 不要かも -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="description" content="">
@@ -14,17 +14,16 @@
     <title>{% block title %}{% endblock %}</title>
 
     <!-- Bootstrap core CSS-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">  {% comment %}type=不要かも{% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">  <!-- type=不要かも -->
 
-    <!-- Custom fonts for this template -->  {% comment %}Webフォントの指定{% endcomment %}
+    <!-- Custom fonts for this template -->  <!-- Webフォントの指定 -->
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    {% comment %}font-family: 'Catamaran', sans-serif;{% endcomment %}
+    <!-- font-family: 'Catamaran', sans-serif; -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    {% comment %}font-family: 'Lato', sans-serif;{% endcomment %}
-
-    {% comment %}日本語フォント{% endcomment %}
+    <!-- font-family: 'Lato', sans-serif; -->
+    <!--日本語フォント-->
      <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    {% comment %}font-family: 'M PLUS Rounded 1c', sans-serif;{% endcomment %}
+    <!-- font-family: 'M PLUS Rounded 1c', sans-serif; -->
 
     <!-- My style -->
     <link rel="stylesheet" type="text/css" herf="{% static 'css/mystyle.css' %}">
