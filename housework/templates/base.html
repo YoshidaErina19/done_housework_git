@@ -41,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navibarResponsive">
                     <ul class="navbar-nav mr-auto">
                          <li class="nav-item {% block active_inquiry %}{% endblock %}">
-                             <a class="nav-link" herf="#">Inquiry</a>
+                             <a class="nav-link" herf="{% url 'housework:inquiry' %}">Inquiry</a>
                          </li>
                      </ul>
                     <ul class="navbar-nav ml-auto">
@@ -69,7 +69,8 @@
         </fotter>
 
         <!-- Bootstrap core JavaScript -->
-        <script src="{% static 'js/bootstrap.min.css' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     </div>
 
 </body>
