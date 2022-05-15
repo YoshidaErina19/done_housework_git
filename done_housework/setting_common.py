@@ -149,8 +149,8 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend'  # 一般ユーザー用(メールアドレス認証)
-    'django.contrib.auth.backends.ModelBackend'  # 管理ユーザー用(ユーザー名認証)
+    'allauth.account.auth_backends.AuthenticationBackend',  # 一般ユーザー用(メールアドレス認証)
+    'django.contrib.auth.backends.ModelBackend',  # 管理ユーザー用(ユーザー名認証)
 )
 
 # メールアドレス認証に変更する設定
