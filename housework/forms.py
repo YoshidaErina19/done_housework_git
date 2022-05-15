@@ -30,7 +30,7 @@ class InquiryForm(forms.Form):
         message = self.cleaned_data['message']
 
         subject = f'お問い合わせ {title}'
-        message = f'送信者:　{name}\nメールアドレス: {email}\n{message}'
+        message = f'送信者:　{name}\nメールアドレス: {email}\nタイトル: {title}\nメッセージ: {message}'
         from_email = 'admin@example.com'
         to_list = [
             'test@example.com'
@@ -40,4 +40,4 @@ class InquiryForm(forms.Form):
         ]
 
         message = EmailMessage(subject=subject,body=message,from_email=from_email,to=to_list,cc=cc_list)
-        message.send
+        message.send()
