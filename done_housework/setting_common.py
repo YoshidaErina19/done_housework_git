@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'accounts.apps.AccountsConfig',
 
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'allauth',
     'allauth.account',
 ]
