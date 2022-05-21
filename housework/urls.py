@@ -6,5 +6,5 @@ app_name = 'housework'
 urlpatterns = [
     path('',views.IndexView.as_view(),name='index'),
     path('inquiry/',views.InquiryView.as_view(),name="inquiry"),
-    path('housework-list', views.HouseworkListView.as_view(), name="housework-list"),
+    path('housework_list/', views.HouseworkListView.as_view(), name="housework_list"),
 ]

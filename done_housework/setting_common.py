@@ -162,7 +162,7 @@ ACCOUNT_EMAIL_VARIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 
 # ログイン/ログアウト後の遷移先を設定
-LOGIN_REDIRECT_URL = 'housework:index'
+LOGIN_REDIRECT_URL = 'housework:housework_list'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 
 # ログアウトリンクのクリック一発でログアウトする設定

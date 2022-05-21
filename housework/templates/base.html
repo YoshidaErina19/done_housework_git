@@ -43,6 +43,11 @@
                          <li class="nav-item {% block active_inquiry %}{% endblock %}">
                              <a class="nav-link" href="{% url 'housework:inquiry' %}">Inquiry</a>
                          </li>
+                        {% if user.is_authenticated %}
+                          <li class="nav-item {% block active_housework_list %}{% endblock %}">
+                              <a class="nav-link" href="{% url 'housework:housework_list' %}">HOUSEWORK LIST</a>
+                          </li>
+                        {% endif %}
                      </ul>
                     <ul class="navbar-nav ml-auto">
                         {% if user.is_authenticated %}
