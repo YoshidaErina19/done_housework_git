@@ -20,7 +20,7 @@
                 </div>
                 {% for housework in housework_list %}
                   <div class="post-preview">
-                      <a href="#">
+                      <a href="{% url 'housework:housework_detail' housework.pk %}">
                           <h2 class="post-title">
                               {{ housework.title }}
                           </h2>

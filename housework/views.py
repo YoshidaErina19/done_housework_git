@@ -51,3 +51,7 @@ class HouseworkListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         houseworks = Housework.objects.filter(user=self.request.user).order_by('-created_at')
         return houseworks
+
+class HouseworkDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Housework
+    template_name = 'housework_detail.html'
