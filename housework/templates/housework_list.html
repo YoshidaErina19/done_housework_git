@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block title %}家事一覧｜Done Housework{% endblock %}
@@ -64,7 +65,7 @@
                       {% if page_obj.has_next %}
                         <li class="page-item">
                             <a class="page-link" href="?page={{ page_obj.next_page_number }}">
-                                <span aria-hidden="true">&laquo;</span>
+                                <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
                       {% endif %}
@@ -231,3 +232,4 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+
