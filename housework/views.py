@@ -72,3 +72,19 @@ class HouseworkCreateView(LoginRequiredMixin, generic.CreateView):
     def form_invalid(self, form):
         messages.error(self.request, '家事の記録に失敗しました。')
         return super().form_invalid(form)
+
+class HouseworkUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Housework
+    template_name = 'housework_update.html'
+    form_class = HouseworkCreateForm
+
+    def get_success_url(self):
+        return reverse_lazy('housework:housework_detail', kwargs={'pk': self.kwargs['pk']})
+
+    def form_valid(self, form):
+        messages.success(self.request, '家事記録を更新しました。')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, '家事記録の更新に失敗しました。')
+        return super().form_invalid(form)
