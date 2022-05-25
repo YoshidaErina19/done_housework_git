@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 
 from django.views import generic
 
-from .forms import InquiryForm
+from .forms import InquiryForm, HouseworkCreateForm
 
 from django.contrib import messages
 
@@ -55,3 +55,20 @@ class HouseworkListView(LoginRequiredMixin, generic.ListView):
 class HouseworkDetailView(LoginRequiredMixin, generic.DetailView):
     model = Housework
     template_name = 'housework_detail.html'
+
+class HouseworkCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Housework
+    template_name = 'housework_create.html'
+    form_class = HouseworkCreateForm
+    success_url = reverse_lazy('housework:housework_list')
+
+    def form_valid(self, form):
+        housework = form.save(commit=False)
+        housework.user = self.request.user
+        housework.save()
+        messages.success(self.request, '家事を記録しました。お疲れ様でした！')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, '家事の記録に失敗しました。')
+        return super().form_invalid(form)

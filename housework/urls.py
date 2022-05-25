@@ -8,4 +8,5 @@ urlpatterns = [
     path('inquiry/',views.InquiryView.as_view(),name="inquiry"),
     path('housework_list/', views.HouseworkListView.as_view(), name="housework_list"),
     path('housework_detail/<int:pk>/', views.HouseworkDetailView.as_view(), name="housework_detail"),
+    path('housework_create/', views.HouseworkCreateView.as_view(), name="housework_create"),
 ]
