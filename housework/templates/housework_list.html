@@ -15,8 +15,11 @@
     <div class="row">
         <div class="my-div-style w-100">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="clearfix">
-                    <a class="btn-btn-primary float-right" href="#">新規作成</a>
+                <br>
+                <div class="clearfix float-right">
+                    <a class="float: right;" href="{% url 'housework:housework_create' %}">
+                        <button class="btn btn-primary">家事記録作成</button>
+                    </a>
                 </div>
                 {% for housework in housework_list %}
                   <div class="post-preview">
