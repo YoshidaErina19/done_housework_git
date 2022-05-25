@@ -88,3 +88,12 @@ class HouseworkUpdateView(LoginRequiredMixin, generic.UpdateView):
     def form_invalid(self, form):
         messages.error(self.request, '家事記録の更新に失敗しました。')
         return super().form_invalid(form)
+
+class HouseworkDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Housework
+    template_name = 'housework_delete.html'
+    success_url = reverse_lazy('housework:housework_list')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, "家事記録を削除しました。")
+        return super().delete(request, *args, **kwargs)
