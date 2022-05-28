@@ -1,6 +1,7 @@
 from django import forms
 from django.core.mail import EmailMessage
 from .models import Housework
+from .models import Purchases
 
 class InquiryForm(forms.Form):
     name = forms.CharField(label='お名前',max_length=30)
@@ -46,7 +47,16 @@ class InquiryForm(forms.Form):
 class HouseworkCreateForm(forms.ModelForm):
     class Meta:
         model = Housework
-        fields = ('title', 'content', 'bought_items','photo1', 'photo2', 'photo3',)
+        fields = ('title', 'content', 'purchases', 'bought_items','photo1', 'photo2', 'photo3',)
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            for field in self.fields.values():
+                field.widget.attrs['class'] = 'form-control'
+
+class PurchasesCreateFofrm(forms.ModelForm):
+    class Meta:
+        model = Purchases
+        fields = ('my_purchases',)
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             for field in self.fields.values():

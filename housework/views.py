@@ -14,6 +14,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Housework
 
+from .models import Purchases
+
 logger = logging.getLogger(__name__)
 
 class IndexView(generic.TemplateView):
@@ -97,3 +99,20 @@ class HouseworkDeleteView(LoginRequiredMixin, generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, "家事記録を削除しました。")
         return super().delete(request, *args, **kwargs)
+
+class PurchasesCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Purchases
+    template_name = 'purchases_create.html'
+    form_class = 'PurchasesCreateForm'
+    success_url = reverse_lazy('housework:housework_list')
+
+    def form_valid(self, form):
+        purchase = form.save(commit=False)
+        purchase.user = self.request.user
+        purchase.save()
+        messages.success(self.request, '買ったものリストを作成しました。')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, '買ったものリストの作成に失敗しました。')
+        return super().form_invalid(form)

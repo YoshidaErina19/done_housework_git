@@ -33,6 +33,19 @@
 
         <div class="row">
             <div class="col-3">
+                <strong>買った物</strong>
+            </div>
+            <div class="col-9">
+                {% for purchase in object.purchases.all %}
+                {{ object.my_purchases }}
+                {% endfor %}
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-3">
                 <strong>買ったもの</strong>
             </div>
             <div class="col-9">
