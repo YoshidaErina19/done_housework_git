@@ -6,21 +6,19 @@
 
 {% block active_housework_list %}active{% endblock %}
 
-{% block head %}
-<link href="{% static 'css/clean-blog.css' %}" rel="stylesheet">
-{% endblock %}
+
 
 {% block contents %}
 <div class="container">
     <div class="row">
         <div class="my-div-style w-100">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="clearfix">
-                    <a class="btn-btn-primary float-right" href="#">新規作成</a>
-                </div>
+                <a class="btn btn-warning mt-5 ml-2" href="{% url 'housework:housework_create' %}">家事記録作成</a>
+                <br>
+                <br>
                 {% for housework in housework_list %}
                   <div class="post-preview">
-                      <a href="#">
+                      <a href="{% url 'housework:housework_detail' housework.pk %}">
                           <h2 class="post-title">
                               {{ housework.title }}
                           </h2>
@@ -56,7 +54,7 @@
                           </li>
                         {% else %}
                           <li class="page_item">
-                              <a class="page-link" href="{{ page_num }}">{{ page_num }}</a>
+                              <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
                           </li>
                         {% endif %}
                       {% endfor %}
