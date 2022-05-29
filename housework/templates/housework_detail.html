@@ -36,7 +36,7 @@
                 <strong>買った物</strong>
             </div>
             <div class="col-9">
-                {% for purchase in object.purchases.all %}
+                {% for something in object.what_i_bought.all %}
                 {{ object.my_purchases }}
                 {% endfor %}
             </div>

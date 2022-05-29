@@ -107,9 +107,9 @@ class PurchasesCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy('housework:housework_list')
 
     def form_valid(self, form):
-        purchase = form.save(commit=False)
-        purchase.user = self.request.user
-        purchase.save()
+        purchase_list = form.save(commit=False)
+        purchase_list.user = self.request.user
+        purchase_list.save()
         messages.success(self.request, '買ったものリストを作成しました。')
         return super().form_valid(form)
 
