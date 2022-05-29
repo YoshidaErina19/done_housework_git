@@ -52,7 +52,7 @@ class HouseworkCreateForm(forms.ModelForm):
             for field in self.fields.values():
                 field.widget.attrs['class'] = 'form-control'
 
-class PurchasesCreateFofrm(forms.ModelForm):
+class PurchasesCreateForm(forms.ModelForm):
     class Meta:
         model = Purchases
         fields = ('my_purchases',)

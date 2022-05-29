@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 
 from django.views import generic
 
-from .forms import InquiryForm, HouseworkCreateForm
+from .forms import InquiryForm, HouseworkCreateForm, PurchasesCreateForm
 
 from django.contrib import messages
 
@@ -103,7 +103,7 @@ class HouseworkDeleteView(LoginRequiredMixin, generic.DeleteView):
 class PurchasesCreateView(LoginRequiredMixin, generic.CreateView):
     model = Purchases
     template_name = 'purchases_create.html'
-    form_class = 'PurchasesCreateForm'
+    form_class = PurchasesCreateForm
     success_url = reverse_lazy('housework:housework_list')
 
     def form_valid(self, form):
