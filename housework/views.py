@@ -38,14 +38,6 @@ class InquiryView(generic.FormView):
 class HouseworkListView(LoginRequiredMixin, generic.ListView):
     model = Housework
     template_name = 'housework_list.html'
-
-    def get_queryset(self):
-        houseworks = Housework.objects.filter(user=self.request.user).order_by('-created_at')
-        return houseworks
-
-class HouseworkListView(LoginRequiredMixin, generic.ListView):
-    model = Housework
-    template_name = 'housework_list.html'
     paginate_by = 2
 
     def get_queryset(self):
