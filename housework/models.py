@@ -1,5 +1,7 @@
 from accounts.models import CustomUser
 from django.db import models
+from django.utils import timezone
+
 
 class Housework(models.Model):
     """家事モデル"""
@@ -12,7 +14,7 @@ class Housework(models.Model):
     photo2 = models.ImageField(verbose_name='写真2', blank=True, null=True)
     photo3 = models.ImageField(verbose_name='写真3', blank=True, null=True)
     created_at = models.DateTimeField(verbose_name='作成日時', auto_now_add=True)
-    update_at = models.DateTimeField(verbose_name='更新日時', auto_now=True)
+    updated_at = models.DateTimeField(verbose_name='更新日時', auto_now=True)
 
     class Meta:
         verbose_name_plural = 'Housework'
