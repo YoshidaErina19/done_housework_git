@@ -14,9 +14,42 @@
                 <table class="table">
                     {{ form.as_table }}
                 </table>
+                <div>
+                    <input type="checkbox" name="tags" value="1" id="id_tags_0" class="invisible">
+                    <label for="id_tags_0" class="round">牛乳</label>
+
+                    <input type="checkbox" name="tags" value="1" id="id_tags_1" class="invisible">
+                    <label for="id_tags_1" class="round">食パン</label>
+                </div>
                 <button class="btn btn-primary" type="submit">作成</button>
             </form>
         </div>
     </div>
+</div>
+
+<div>
+    <style>
+        input.invisible[type="checkbox"] {
+            display: none;
+        }
+
+        label.round {
+            display: inline-block;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            border: solid 1px #ccc;
+            transition: 0.25s;
+            padding: 6px 18px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 3px;
+        }
+
+        input[type="checkbox"]:checked + label {
+            background: #00809d;
+            color: #fff;
+        }
+    </style>
 </div>
 {% endblock %}
