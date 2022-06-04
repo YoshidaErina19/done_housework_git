@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+{% load django_bootstrap5 %}  <!-- 不要かも -->
+
+<head>
+    {% bootstrap_css %}  <!-- 不要かも -->
+    {% bootstrap_javascript %}  <!-- 不要かも -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">  <!-- type=不要かも -->
+
+    <!-- Custom fonts for this template -->  <!-- Webフォントの指定 -->
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- font-family: 'Catamaran', sans-serif; -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <!-- font-family: 'Lato', sans-serif; -->
+    <!--日本語フォント-->
+     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- font-family: 'M PLUS Rounded 1c', sans-serif; -->
+
+    <!-- My style -->
+    <link rel="stylesheet" type="text/css" herf="{% static 'css/mystyle.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div id="wrapper">
+        <!--Navigation-->
+        <nav class="navbar-expand-lg navbar-dark bg-primary navbar-customfixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'housework:index' %}">Done Housework</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expandad="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navibarResponsive">
+                    <ul class="navbar-nav mr-auto">
+                         <li class="nav-item {% block active_inquiry %}{% endblock %}">
+                             <a class="nav-link" href="{% url 'housework:inquiry' %}">Inquiry</a>
+                         </li>
+                     </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block header %}{% endblock %}
+
+        {% if messages %}
+          <div class="container">
+              <div class="row">
+                  <div class="my-div-style w-100">
+                      <ul class="messages" style="list-style: none;">
+                          {% for message in messages %}
+                          <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                              {{ message }}
+                          </li>
+                          {% endfor %}
+                      </ul>
+                  </div>
+              </div>
+          </div>
+        {% endif %}
+
+        {% block contents %}{% endblock %}
+
+        <!-- Footer -->
+        <fotter classs="py-5 bg-block">
+            <div class="container">
+                <p class="m-0 text-center small">Copyright &copy; Done Housework 2022</p>
+            </div>
+            <!-- /.container -->
+        </fotter>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    </div>
+
+</body>
+</html>

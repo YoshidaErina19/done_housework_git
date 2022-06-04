@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('housework.urls')),
     path('accounts/', include('allauth.urls')),
+    path('grocery/', include('grocery.urls')),
 ]
 
 # 開発サーバーでメディアを配信できるようにする設定
