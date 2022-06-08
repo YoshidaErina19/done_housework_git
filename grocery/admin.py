@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import CheckBox
+from .models import Grocery
 
-admin.site.register(CheckBox)
+admin.site.register(Grocery)

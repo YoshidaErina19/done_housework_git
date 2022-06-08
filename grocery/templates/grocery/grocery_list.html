@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grocery</title>
+</head>
+<body>
+    {% for checkbox in checkbox_list %}
+    <div>
+        <p>買った物</p>
+        <input type="checkbox" name="tags" value="1" id="id_tags_0" class="invisible" {{ checkbox.checkbox_1 }}>
+        <label for="id_tags_0" class="round">牛乳</label>
+
+        <input type="checkbox" name="tags" value="1" id="id_tags_1" class="invisible" {{ checkbox.checkbox_2 }}>
+        <label for="id_tags_1" class="round">食パン</label>
+
+        <input type="checkbox" name="tags" value="1" id="id_tags_2" class="invisible" {{ checkbox.checkbox_3 }}>
+        <label for="id_tags_2" class="round">食パン2</label>
+    </div>
+    {% endfor %}
+
+<div>
+    <style>
+        input.invisible[type="checkbox"] {
+            display: none;
+        }
+
+        label.round {
+            display: inline-block;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            border: solid 1px #ccc;
+            transition: 0.25s;
+            padding: 6px 18px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 3px;
+        }
+
+        input[type="checkbox"]:checked + label {
+            background: #00809d;
+            color: #fff;
+        }
+    </style>
+</div>
+
+</body>
+</html>
